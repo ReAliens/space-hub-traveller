@@ -13,6 +13,7 @@ const loadRockets = () => async (dispatch) => {
         name: rocketData.rocket_name,
         description: rocketData.description,
         images: rocketData.flickr_images,
+        reserved: false,
       }));
       dispatch(getCurrentRocketsSuccess(rockets));
     } else throw (ERROR);

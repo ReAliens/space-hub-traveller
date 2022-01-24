@@ -1,8 +1,13 @@
+import { BrowserRouter } from 'react-router-dom';
+import Header from './Components/Header/Header';
+import AppRoutes from './routes/routes';
+
 function App() {
   return (
-    <div>
-      <h1 className="text-6xl text-blue-500">Hello Space Hub</h1>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <AppRoutes />
+    </BrowserRouter>
   );
 }
 

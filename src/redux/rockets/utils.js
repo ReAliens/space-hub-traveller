@@ -1,9 +1,9 @@
-import { loadingRequest, getCurrentRocketsSuccess, requestFailure } from './rockets';
+import { loadingRocketRequest, getCurrentRocketsSuccess, rocketRequestFailure } from './rockets';
 
 const ERROR = new Error('Something went wrong');
 
 const loadRockets = () => async (dispatch) => {
-  dispatch(loadingRequest);
+  dispatch(loadingRocketRequest);
   try {
     const response = await fetch('https://api.spacexdata.com/v3/rockets');
     if (response.ok) {
@@ -18,7 +18,7 @@ const loadRockets = () => async (dispatch) => {
       dispatch(getCurrentRocketsSuccess(rockets));
     } else throw (ERROR);
   } catch (error) {
-    dispatch(requestFailure(error.message));
+    dispatch(rocketRequestFailure(error.message));
   }
 };
 

@@ -1,8 +1,9 @@
-const LOADING_REQUEST = 'LOADING_REQUEST';
-const GET_CURRENT_ROCKETS_SUCCESS = 'GET_CURRENT_ROCKETS_SUCCESS';
-const REQUEST_FAILURE = 'REQUEST_FAILURE';
-const REQUEST_SUCCESS = 'REQUEST_SUCCESS';
-const CHANGE_RESERVATION = 'CHANGE_RESERVATION';
+import {
+  LOADING_ROCKET_REQUEST,
+  GET_CURRENT_ROCKETS_SUCCESS,
+  ROCKET_REQUEST_FAILURE,
+  CHANGE_RESERVATION,
+} from './constants';
 
 const initialState = {
   loading: false,
@@ -10,8 +11,8 @@ const initialState = {
   error: '',
 };
 
-export const loadingRequest = () => ({
-  type: LOADING_REQUEST,
+export const loadingRocketRequest = () => ({
+  type: LOADING_ROCKET_REQUEST,
 });
 
 export const getCurrentRocketsSuccess = (payload) => ({
@@ -19,13 +20,9 @@ export const getCurrentRocketsSuccess = (payload) => ({
   payload,
 });
 
-export const requestFailure = (payload) => ({
-  type: REQUEST_FAILURE,
+export const rocketRequestFailure = (payload) => ({
+  type: ROCKET_REQUEST_FAILURE,
   payload,
-});
-
-export const requestSuccess = () => ({
-  type: REQUEST_SUCCESS,
 });
 
 export const changeReservation = (payload) => ({
@@ -35,7 +32,7 @@ export const changeReservation = (payload) => ({
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case LOADING_REQUEST:
+    case LOADING_ROCKET_REQUEST:
       return {
         ...state,
         loading: true,
@@ -48,13 +45,7 @@ const reducer = (state = initialState, action) => {
         rockets: action.payload,
       };
 
-    case REQUEST_SUCCESS:
-      return {
-        ...state,
-        loading: false,
-      };
-
-    case REQUEST_FAILURE:
+    case ROCKET_REQUEST_FAILURE:
       return {
         ...state,
         loading: false,

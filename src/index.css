@@ -31,3 +31,7 @@ code {
     'Courier New',
     monospace;
 }
+
+li .active {
+  @apply text-blue-700
+}

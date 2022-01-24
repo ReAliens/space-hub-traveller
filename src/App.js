@@ -1,8 +1,15 @@
 import { BrowserRouter } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import Header from './Components/Header/Header';
 import AppRoutes from './routes/routes';
+import loadRockets from './redux/rockets/utils';
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(loadRockets());
+  }, []);
   return (
     <BrowserRouter>
       <Header />

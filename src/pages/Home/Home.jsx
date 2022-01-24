@@ -1,7 +1,17 @@
-const Rockets = () => (
-  <div>
-    <h1 className="text-6xl">Hello from my Rockets page</h1>
-  </div>
-);
+import { useSelector } from 'react-redux';
+
+const Rockets = () => {
+  const { rockets } = useSelector((state) => state.rocketReducer);
+
+  return (
+    <ul>
+      {rockets.map((rocket) => (
+        <li key={rocket.id}>
+          {rocket.name}
+        </li>
+      ))}
+    </ul>
+  );
+};
 
 export default Rockets;

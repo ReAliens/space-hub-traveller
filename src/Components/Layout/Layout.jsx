@@ -25,18 +25,19 @@ const Layout = () => {
         <div> Space Traveller</div>
         <ul className="flex gap-8">
           {links.map((link) => (
-            <li key={link.id} className={`${location.pathname === link.path && 'text-blue-700'} text-black-700 hover:text-blue-300`}>
-              <NavLink
-                to={link.path}
-              >
-                {link.text}
-              </NavLink>
+            <li
+              key={link.id}
+              className={`${
+                location.pathname === link.path && 'text-blue-700'
+              } text-black-700 hover:text-blue-300`}
+            >
+              <NavLink to={link.path}>{link.text}</NavLink>
             </li>
           ))}
         </ul>
       </nav>
       {children}
-      <footer />
+      <footer className="fixed bottom-0 bg-white w-full">test dfjnfskjnfsjkn</footer>
     </>
   );
 };

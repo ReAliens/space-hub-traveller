@@ -17,7 +17,7 @@ const Profile = () => {
   };
 
   return (
-    <div className="grid grid-cols-2 items-center w-full h-96 gap-10 px-10">
+    <div className="grid grid-cols-2 items-center w-full h-96 gap-10">
       <div className="flex flex-col justify-start items-center h-full">
         <h2 className="text-4xl">My Rockets</h2>
         {rockets.map(

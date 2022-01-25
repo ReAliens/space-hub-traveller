@@ -3,7 +3,7 @@ import {
   GET_CURRENT_ROCKETS_SUCCESS,
   ROCKET_REQUEST_FAILURE,
   CHANGE_RESERVATION,
-} from './constants';
+} from '../constants';
 
 const initialState = {
   loading: false,

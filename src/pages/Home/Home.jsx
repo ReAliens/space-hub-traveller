@@ -5,7 +5,7 @@ const Rockets = () => {
   const { rockets } = useSelector((state) => state.rocketReducer);
 
   return (
-    <ul className="flex flex-col gap-8 p-10 mt-11">
+    <ul className="grid grid-flow-row gap-8 p-10 ">
       {rockets.map((rocket) => (
         <Rocket key={rocket.id} rocket={rocket} />
       ))}

@@ -1,17 +1,12 @@
-import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { changeReservation } from '../../redux/rockets/rockets';
+import ReservationBtn from './ReserveBtn';
 
 const Rocket = (props) => {
-  const dispatch = useDispatch();
   const { rocket } = props;
   const {
     id, name, description, reserved, images,
   } = rocket;
 
-  const changeBooking = () => {
-    dispatch(changeReservation(id));
-  };
   return (
     <li className="h-[12rem] flex gap-10">
       <div className="w-[20%]">
@@ -32,19 +27,7 @@ const Rocket = (props) => {
             {description}
           </span>
         </p>
-        {
-          reserved
-            ? (
-              <button type="button" onClick={changeBooking} className=" p-2 rounded text-indigo-100  bg-slate-300 hover:bg-slate-400 w-40">
-                Cancel Reservation
-              </button>
-            )
-            : (
-              <button type="button" onClick={changeBooking} className=" p-2 rounded text-indigo-100 bg-blue-700 hover:bg-blue-400 w-40">
-                Reserve Rocket
-              </button>
-            )
-        }
+        <ReservationBtn id={id} reserved={reserved} />
       </div>
     </li>
   );

@@ -1,6 +1,7 @@
 import { NavLink, useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const Header = () => {
+const Layout = ({ children }) => {
   const links = [
     {
       id: 1,
@@ -20,21 +21,30 @@ const Header = () => {
   ];
   const location = useLocation();
   return (
-    <nav className="flex sticky top-0 h-[80px] bg-white">
-      <div> Space Traveller</div>
-      <ul className="flex gap-8">
-        {links.map((link) => (
-          <li key={link.id} className={`${location.pathname === link.path && 'text-blue-700'} text-black-700 hover:text-blue-300`}>
-            <NavLink
-              to={link.path}
+    <>
+      <nav className="flex sticky top-0 h-[80px] bg-white">
+        <div> Space Traveller</div>
+        <ul className="flex gap-8">
+          {links.map((link) => (
+            <li
+              key={link.id}
+              className={`${
+                location.pathname === link.path && 'text-blue-700'
+              } text-black-700 hover:text-blue-300`}
             >
-              {link.text}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
-    </nav>
+              <NavLink to={link.path}>{link.text}</NavLink>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      {children}
+      <footer className="fixed bottom-0 bg-white w-full">test dfjnfskjnfsjkn</footer>
+    </>
   );
 };
 
-export default Header;
+Layout.propTypes = {
+  children: PropTypes.element.isRequired,
+};
+
+export default Layout;

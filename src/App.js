@@ -14,8 +14,9 @@ function App() {
   }, []);
   return (
     <BrowserRouter>
-      <Header />
-      <AppRoutes />
+      <Header>
+        <AppRoutes />
+      </Header>
     </BrowserRouter>
   );
 }

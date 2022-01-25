@@ -5,7 +5,6 @@ import TableRow from '../../Components/TableRow/TableRow';
 
 const Missions = () => {
   const missions = useSelector((state) => state.missionReducer);
-  console.log('errrrrrrrrrr', missions);
   return (
     <div className="px-10">
       {missions.loading ? (

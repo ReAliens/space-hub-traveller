@@ -31,9 +31,3 @@ code {
     'Courier New',
     monospace;
 }
-
-/* stylelint-disable */
-li .active {
-  @apply text-blue-700
-}
-/* stylelint-enable */

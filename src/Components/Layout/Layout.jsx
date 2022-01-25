@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
   const location = useLocation();
   return (
     <>
-      <nav className="flex sticky top-0 h-[100px] justify-between px-10 items-center border-b-2 border-gray-300">
+      <nav className="flex sticky top-0 h-[100px] justify-between bg-white px-10 items-center border-b-2 border-gray-300">
         <div className="flex items-center gap-3">
           <img src={`${Logo}`} alt="Logo" className="h-[50px]" />
           <h1 className="text-4xl font-medium tracking-tighter">

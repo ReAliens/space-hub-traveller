@@ -1,4 +1,9 @@
-import { MISSIONS_REQUEST_DONE, MISSIONS_REQUEST_ERROR, MISSIONS_REQUEST_START } from '../constants';
+import {
+  JOIN_MISSION,
+  MISSIONS_REQUEST_DONE,
+  MISSIONS_REQUEST_ERROR,
+  MISSIONS_REQUEST_START,
+} from '../constants';
 
 const initState = {
   loading: false,
@@ -24,6 +29,17 @@ const reducer = (state = initState, action) => {
         ...state,
         loading: false,
         data: action.payload,
+      };
+
+    case JOIN_MISSION:
+      return {
+        ...state,
+        data: state.data.map((item) => {
+          if (item.id !== action.payload) {
+            return item;
+          }
+          return { ...item, joined: !item.joined };
+        }),
       };
     default:
       return state;

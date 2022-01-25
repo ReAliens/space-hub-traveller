@@ -1,4 +1,5 @@
 import {
+  JOIN_MISSION,
   MISSIONS_REQUEST_DONE,
   MISSIONS_REQUEST_ERROR,
   MISSIONS_REQUEST_START,
@@ -17,6 +18,11 @@ export const missionFetchDone = (payload) => ({
 
 export const missionFetchError = (payload) => ({
   type: MISSIONS_REQUEST_ERROR,
+  payload,
+});
+
+export const joinMession = (payload) => ({
+  type: JOIN_MISSION,
   payload,
 });
 

@@ -19,7 +19,7 @@ const Header = () => {
     },
   ];
   return (
-    <nav className="flex fixed top-0">
+    <nav className="flex sticky top-0 h-[80px]">
       <div> Space Traveller</div>
       <ul className="flex gap-8">
         {links.map((link) => (

@@ -57,7 +57,6 @@ const reducer = (state = initialState, action) => {
         ...state,
         rockets: state.rockets.map((rocket) => {
           if (rocket.id !== action.payload) {
-            console.log(action.payload, rocket.id);
             return rocket;
           }
           return { ...rocket, reserved: !rocket.reserved };

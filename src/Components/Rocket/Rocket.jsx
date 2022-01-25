@@ -10,7 +10,6 @@ const Rocket = (props) => {
   } = rocket;
 
   const changeBooking = () => {
-    console.log(id);
     dispatch(changeReservation(id));
   };
   return (

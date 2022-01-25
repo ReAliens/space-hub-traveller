@@ -1,18 +1,49 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import ProfileRow from '../../Components/ProfileRow/ProfileRow';
+import { joinMession } from '../../redux/missions/missionsActions';
+import { changeReservation } from '../../redux/rockets/rockets';
 
 const Profile = () => {
-  let { rockets } = useSelector((state) => state.rocketReducer);
-  rockets = rockets.filter((rocket) => rocket.reserved);
+  const dispatch = useDispatch();
+  const { rockets } = useSelector((state) => state.rocketReducer);
+  const missions = useSelector((state) => state.missionReducer);
+
+  const handleJoinMission = (id) => {
+    dispatch(joinMession(id));
+  };
+
+  const handleReserveRocket = (id) => {
+    dispatch(changeReservation(id));
+  };
+
   return (
-    <div className="flex flex-col">
-      <h1>Hello from my Profile page</h1>
-      <ul className="text-lg bg-slate-400 font-bold">
-        {rockets.map((rocket) => (
-          <li key={rocket.id}>
-            {rocket.name}
-          </li>
-        ))}
-      </ul>
+    <div className="grid grid-cols-2 items-center w-full h-96 gap-10 px-10">
+      <div className="flex flex-col justify-start items-center h-full">
+        <h2 className="text-4xl">My Rockets</h2>
+        {rockets.map(
+          (rocket) => rocket.reserved && (
+          <ProfileRow
+            key={rocket.id}
+            name={rocket.name}
+            buttonText="Cancel Reservation"
+            onClick={() => handleReserveRocket(rocket.id)}
+          />
+          ),
+        )}
+      </div>
+      <div className="flex flex-col justify-start items-center h-full">
+        <h2 className="text-4xl">My Missions</h2>
+        {missions.data.map(
+          (mission) => mission.joined && (
+          <ProfileRow
+            key={mission.id}
+            name={mission.name}
+            buttonText="Leave mission"
+            onClick={() => handleJoinMission(mission.id)}
+          />
+          ),
+        )}
+      </div>
     </div>
   );
 };

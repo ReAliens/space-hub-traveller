@@ -17,7 +17,7 @@
 
  ## Live App
 
- - you can see our app <a href="https://space-hub-traveler.herokuapp.com/">here</a>
+ - you can see our app <a href="https://space-hub-traveler.herokuapp.com/" target="_blank">here</a>
 
 ## Installation
 

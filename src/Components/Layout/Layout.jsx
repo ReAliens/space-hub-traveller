@@ -45,12 +45,38 @@ const Layout = ({ children }) => {
           ))}
         </ul>
       </nav>
-      <div className="mt-8 px-10">
-        {children}
-      </div>
-      <footer className="fixed bottom-0 bg-white w-full">
-        test dfjnfskjnfsjkn
-        <a href="https://www.flaticon.com/free-icons/planet" title="planet icons">Planet icons created by Freepik - Flaticon</a>
+      <div className="mt-8 px-10">{children}</div>
+      <footer className="fixed bottom-0 bg-white w-full flex justify-between px-4">
+        <div>
+          implement by
+          {' '}
+          <a
+            href="https://github.com/ReAliens"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Ahmed Reda
+          </a>
+          {' '}
+          and
+          {' '}
+          <a
+            href="https://github.com/RayhanTabase"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Salim Abdulai
+          </a>
+          {' '}
+        </div>
+        <a
+          href="https://www.flaticon.com/free-icons/planet"
+          target="_blank"
+          title="planet icons"
+          rel="noreferrer"
+        >
+          Planet icons created by Freepik - Flaticon
+        </a>
       </footer>
     </>
   );

@@ -41,13 +41,15 @@ You should now have the project running locally on a dev server.
 
 - GitHub: [@RayhanTabase](https://github.com/RayhanTabase)
 - Twitter: [@RayhanTabase](https://twitter.com/@RayhanTabase)
-- LinkedIn: [Salim-Abdulai](https://linkedin.com/in/salim-abdulai-5430065b)
+- LinkedIn: [Salim-Abdulai](https://linkedin.com/in/salimabdulai)
 - Email: salimabdulai2@yahoo.com
 
 👤 **Ahmed Reda**
 
 - GitHub: [@ReAliens](https://github.com/ReAliens)
-
+- Twitter: [@AhmedRedaMoha19](https://twitter.com/AhmedRedaMoha19)
+- LinkedIn: [Ahmed-Reda](https://www.linkedin.com/in/armali/)
+- Email: ahmedreda152@gmail.com
 
 
 ## Acknowledgments

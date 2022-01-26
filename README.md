@@ -2,8 +2,6 @@
 # Space Traveler's Hub
 > A web application for a company that provides commercial and scientific space travel services. This application allows users to book rockets and join selected space missions. Data is fetched from the real live SpaceX API.
 
-## Screenshots
-
 ## Built With
 - React
 - Redux

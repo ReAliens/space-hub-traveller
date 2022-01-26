@@ -6,7 +6,7 @@ import TableRow from '../../Components/TableRow/TableRow';
 const Missions = () => {
   const missions = useSelector((state) => state.missionReducer);
   return (
-    <div className="px-10">
+    <div>
       {missions.loading ? (
         <div className="h-screen overflow-hidden w-full flex items-center justify-center">
           <Spinner />

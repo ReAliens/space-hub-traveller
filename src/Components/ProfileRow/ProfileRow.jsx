@@ -7,7 +7,7 @@ const ProfileRow = ({ name, buttonText, onClick }) => (
       type="button"
       className={`${
         buttonText === 'Cancel Reservation'
-          ? 'p-2 rounded text-indigo-100  bg-slate-300 hover:bg-slate-400 w-40'
+          ? 'p-2 rounded text-indigo-100  bg-slate-800 hover:text-slate-800 hover:bg-indigo-100 w-40'
           : 'border-red-500 text-red-500 border-2 p-2 rounded hover:bg-red-500 hover:text-white'
       } `}
       onClick={onClick}

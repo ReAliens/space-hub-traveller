@@ -19,7 +19,7 @@ const ReservationBtn = (props) => {
       className={`${reserved
         ? 'text-indigo-100  bg-slate-300 hover:bg-slate-400'
         : 'text-indigo-100 bg-blue-700 hover:bg-blue-400'}
-        rounded p2 w-20 h-8 md:w-40 md:h-18 mt-auto
+        rounded w-20 h-8 md:w-40 md:h-18 mt-auto
     `}
     >
       <Breakpoint medium up>

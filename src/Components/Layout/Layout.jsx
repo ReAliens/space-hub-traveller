@@ -59,7 +59,7 @@ const Layout = ({ children }) => {
       <nav className="md:hidden sticky top-0 justify-between bg-white items-center border-b-2 border-gray-300 flex px-10 py-8 mx-auto">
         <div className="flex items-center gap-3">
           <img src={`${Logo}`} alt="Logo" className="h-[30px]" />
-          <h1 className="md:block font-medium tracking-tighter">
+          <h1 className="hidden sm:block text-lg font-medium tracking-tighter">
             {`
               Space Traveler's Hub
             `}

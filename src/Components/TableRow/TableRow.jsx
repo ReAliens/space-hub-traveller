@@ -17,7 +17,7 @@ const TableRow = ({ data, index }) => {
       <div className="border-gray-300 border-2 text-xs md:text-2xl flex items-start md:items-center p-2 md:px-4 break-word">
         <h3>{data?.name}</h3>
       </div>
-      <div className=" border-gray-300 border-2 text-xs md:text-base flex items-start md:items-center p-4 overflow-scroll break-word">
+      <div className=" border-gray-300 border-2 text-xs md:text-base flex items-start md:items-center p-4 overflow-scroll md:overflow-hidden break-word">
         <p>{data?.description}</p>
       </div>
       <div className=" border-gray-300 border-2 text-2xl flex items-center px-4 justify-center">

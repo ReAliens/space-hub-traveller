@@ -82,7 +82,7 @@ const Layout = ({ children }) => {
           <GrClose className={`${!showHamburgerLinks && 'hidden'}`} />
         </button>
       </nav>
-      <div className="mt-8 px-10">{children}</div>
+      <div className="mt-8 px-10 mb-24">{children}</div>
       <footer className="fixed bottom-0 bg-white w-full flex justify-between px-4">
         <div>
           implement by

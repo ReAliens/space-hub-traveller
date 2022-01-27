@@ -1,6 +1,7 @@
 import { BrowserRouter } from 'react-router-dom';
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { BreakpointProvider } from 'react-socks';
 import Layout from './Components/Layout/Layout';
 import AppRoutes from './routes/routes';
 import loadRockets from './redux/rockets/utils';
@@ -14,9 +15,11 @@ function App() {
   }, []);
   return (
     <BrowserRouter>
-      <Layout>
-        <AppRoutes />
-      </Layout>
+      <BreakpointProvider>
+        <Layout>
+          <AppRoutes />
+        </Layout>
+      </BreakpointProvider>
     </BrowserRouter>
   );
 }

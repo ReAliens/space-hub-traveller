@@ -19,7 +19,7 @@ const Profile = () => {
   return (
     <div className="grid grid-cols-2 items-center w-full h-96 gap-10">
       <div className="flex flex-col justify-start items-center h-full">
-        <h2 className="text-4xl mb-3">My Rockets</h2>
+        <h2 className="md:text-4xl mb-3">My Rockets</h2>
         {rockets.map(
           (rocket) => rocket.reserved && (
           <ProfileRow
@@ -32,7 +32,7 @@ const Profile = () => {
         )}
       </div>
       <div className="flex flex-col justify-start items-center h-full">
-        <h2 className="text-4xl mb-3">My Missions</h2>
+        <h2 className="md:text-4xl mb-3 min">My Missions</h2>
         {missions.data.map(
           (mission) => mission.joined && (
           <ProfileRow

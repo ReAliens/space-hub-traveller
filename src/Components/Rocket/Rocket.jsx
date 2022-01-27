@@ -13,10 +13,10 @@ const Rocket = (props) => {
       <div className="w-[20%]">
         <img src={images[0]} alt={name} className="object-fit  h-full w-full" />
       </div>
-      <div className="w-[60%] flex flex-col gap-3">
-        <h1 className="text-lg font-bold">
+      <div className="w-[60%] flex flex-col gap-3 p-4">
+        <h2 className="text-base md:text-lg font-bold">
           {name}
-        </h1>
+        </h2>
         <Description description={description} reserved={reserved} />
         <ReservationBtn id={id} reserved={reserved} />
       </div>

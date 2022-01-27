@@ -8,7 +8,7 @@ const headerItems = [
 const TableHeader = () => (
   <div className="w-full grid grid-cols-4">
     {headerItems.map((item) => (
-      <div key={item.id} className="h-16 border-gray-300 border-2 text-2xl flex items-center px-4 font-bold">
+      <div key={item.id} className="h-16 border-gray-300 border-2 break-words overflow-hidden text-xs md:text-2xl flex items-center justify-center px-4 font-bold">
         <h3>{item.title}</h3>
       </div>
     ))}

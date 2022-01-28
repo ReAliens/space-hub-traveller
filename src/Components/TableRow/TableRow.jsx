@@ -1,13 +1,17 @@
+/* eslint-disable react/prop-types */
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { Breakpoint } from 'react-socks';
 import { joinMession } from '../../redux/missions/missionsActions';
 
-const TableRow = ({ data, index }) => {
+const TableRow = ({ data, index, joined }) => {
   const dispatch = useDispatch();
+  const { id } = data;
   const handleJoin = () => {
-    dispatch(joinMession(data?.id));
+    dispatch(joinMession(data));
   };
+  const styling = joined.find((item) => item.id === id);
+
   return (
     <div
       className={`w-full grid grid-cols-4 ${
@@ -23,14 +27,14 @@ const TableRow = ({ data, index }) => {
       <div className=" border-gray-300 border-2 text-2xl flex items-center px-4 justify-center">
         <span
           className={`${
-            data.joined ? 'bg-cyan-600' : 'bg-gray-600'
+            id === styling?.id ? 'bg-cyan-600' : 'bg-gray-600'
           } text-white px-2 md:px-4 h-8 md:h-20 text-sm md:text-2xl flex items-center justify-center`}
         >
           <Breakpoint medium up>
-            {data?.joined ? 'Active member' : 'Not A member'}
+            {id === styling?.id ? 'Active member' : 'Not A member'}
           </Breakpoint>
           <Breakpoint small down>
-            {data?.joined ? 'Active' : 'Not'}
+            {id === styling?.id ? 'Active' : 'Not'}
           </Breakpoint>
         </span>
       </div>
@@ -38,17 +42,17 @@ const TableRow = ({ data, index }) => {
         <button
           onClick={handleJoin}
           className={`border-2 ${
-            data?.joined
+            id === styling?.id
               ? 'border-red-500 text-red-500'
               : 'border-gray-400 text-gray-400'
           } px-2 md:px-4 h-8 md:h-20 text-sm md:text-2xl`}
           type="button"
         >
           <Breakpoint medium up>
-            {data?.joined ? 'Leave Mission' : 'Join Mission'}
+            {id === styling?.id ? 'Leave Mission' : 'Join Mission'}
           </Breakpoint>
           <Breakpoint small down>
-            {data?.joined ? 'Leave' : 'Join'}
+            {id === styling?.id ? 'Leave' : 'Join'}
           </Breakpoint>
         </button>
       </div>

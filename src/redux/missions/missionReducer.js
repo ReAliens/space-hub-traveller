@@ -4,11 +4,13 @@ import {
   MISSIONS_REQUEST_ERROR,
   MISSIONS_REQUEST_START,
 } from '../constants';
+import addMissions from './missions.utils';
 
 const initState = {
   loading: false,
   error: undefined,
   data: [],
+  joinedMissions: [],
 };
 
 const reducer = (state = initState, action) => {
@@ -35,11 +37,12 @@ const reducer = (state = initState, action) => {
       return {
         ...state,
         data: state.data.map((item) => {
-          if (item.id !== action.payload) {
+          if (item.id !== action.payload.id) {
             return item;
           }
           return { ...item, joined: !item.joined };
         }),
+        joinedMissions: addMissions(state.joinedMissions, action.payload),
       };
     default:
       return state;

@@ -4,11 +4,13 @@ import {
   ROCKET_REQUEST_FAILURE,
   CHANGE_RESERVATION,
 } from '../constants';
+import reserveRocket from './rockets.utils';
 
-const initialState = {
+const initState = {
   loading: false,
+  error: undefined,
   rockets: [],
-  error: '',
+  joinedRockets: [],
 };
 
 export const loadingRocketRequest = () => ({
@@ -30,7 +32,7 @@ export const changeReservation = (payload) => ({
   payload,
 });
 
-const reducer = (state = initialState, action) => {
+const reducer = (state = initState, action) => {
   switch (action.type) {
     case LOADING_ROCKET_REQUEST:
       return {
@@ -61,6 +63,7 @@ const reducer = (state = initialState, action) => {
           }
           return { ...rocket, reserved: !rocket.reserved };
         }),
+        joinedRockets: reserveRocket(state.joinedRockets, action.payload),
       };
 
     default:

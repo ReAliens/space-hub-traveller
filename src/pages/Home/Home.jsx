@@ -4,8 +4,7 @@ import Spinner from '../../Components/Spinner/Spinner';
 
 const Rockets = () => {
   const { readyRockets } = useSelector((state) => state);
-  const { rockets, loading } = readyRockets;
-
+  const { rockets, loading, joinedRockets } = readyRockets;
   return (
     <>
       {loading ? (
@@ -15,7 +14,11 @@ const Rockets = () => {
       ) : (
         <ul className="grid grid-flow-row gap-8">
           {rockets.map((rocket) => (
-            <Rocket key={rocket.id} rocket={rocket} />
+            <Rocket
+              key={rocket.id}
+              rocket={rocket}
+              reservedRockets={joinedRockets}
+            />
           ))}
         </ul>
       )}

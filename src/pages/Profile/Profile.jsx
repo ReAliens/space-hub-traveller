@@ -7,7 +7,7 @@ import { changeReservation } from '../../redux/rockets/rockets';
 const Profile = () => {
   const dispatch = useDispatch();
   const { readyRockets } = useSelector((state) => state);
-  const { rockets } = readyRockets;
+  const { joinedRockets } = readyRockets;
   const { excistedMissions } = useSelector((state) => state);
   const { joinedMissions } = excistedMissions;
 
@@ -15,25 +15,22 @@ const Profile = () => {
     dispatch(joinMession(mission));
   };
 
-  const handleReserveRocket = (id) => {
-    dispatch(changeReservation(id));
+  const handleReserveRocket = (rocket) => {
+    dispatch(changeReservation(rocket));
   };
 
   return (
     <div className="grid grid-cols-2 items-center w-full h-96 gap-10">
       <div className="flex flex-col justify-start items-center h-full">
         <h2 className="md:text-4xl mb-3">My Rockets</h2>
-        {rockets.map(
-          (rocket) =>
-            rocket.reserved && (
-              <ProfileRow
-                key={rocket.id}
-                name={rocket.name}
-                buttonText="Cancel Reservation"
-                onClick={() => handleReserveRocket(rocket.id)}
-              />
-            ),
-        )}
+        {joinedRockets.map((rocket) => (
+          <ProfileRow
+            key={rocket.id}
+            name={rocket.name}
+            buttonText="Cancel Reservation"
+            onClick={() => handleReserveRocket(rocket)}
+          />
+        ))}
       </div>
       <div className="flex flex-col justify-start items-center h-full">
         <h2 className="md:text-4xl mb-3 min">My Missions</h2>

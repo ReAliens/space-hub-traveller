@@ -3,7 +3,8 @@ import Rocket from '../../Components/Rocket/Rocket';
 import Spinner from '../../Components/Spinner/Spinner';
 
 const Rockets = () => {
-  const { rockets, loading } = useSelector((state) => state.rocketReducer);
+  const { readyRockets } = useSelector((state) => state);
+  const { rockets, loading } = readyRockets;
 
   return (
     <>

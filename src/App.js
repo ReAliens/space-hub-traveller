@@ -1,4 +1,3 @@
-import { BrowserRouter } from 'react-router-dom';
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { BreakpointProvider } from 'react-socks';
@@ -14,13 +13,11 @@ function App() {
     dispatch(fetchMissions());
   }, []);
   return (
-    <BrowserRouter>
-      <BreakpointProvider>
-        <Layout>
-          <AppRoutes />
-        </Layout>
-      </BreakpointProvider>
-    </BrowserRouter>
+    <BreakpointProvider>
+      <Layout>
+        <AppRoutes />
+      </Layout>
+    </BreakpointProvider>
   );
 }
 

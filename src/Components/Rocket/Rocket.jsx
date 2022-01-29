@@ -16,15 +16,15 @@ const Rocket = (props) => {
   const styling = reservedRockets.find((item) => item.id === rocket.id);
 
   return (
-    <li className="h-[12rem] flex gap-10">
-      <div className="w-[20%]">
+    <li className=" h-80 lg:h-60 flex gap-6 md:gap-10">
+      <div className="w-[30%] md:w-[20%]">
         <img
           src={rocket.images[0]}
           alt={rocket.name}
           className="object-fit  h-full w-full"
         />
       </div>
-      <div className="w-[60%] flex flex-col gap-3 p-4">
+      <div className="w-[60%] flex flex-col gap-3">
         <h2 className="text-base md:text-lg font-bold">{rocket.name}</h2>
         <p className="text-ellipsis overflow-y-auto md:overflow-hidden">
           {styling?.id === rocket.id && (
